@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Todo App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body
+    class="bg-gray-950 h-screen w-screen p-4 flex items-center justify-center font-sans"
+  >
+    <div
+      class="bg-white/5 border border-white/10 backdrop-blur-md h-full max-w-2xl w-full rounded-2xl p-6 shadow-2xl flex flex-col"
+    >
+      <h1 class="text-white text-2xl font-bold mb-6">My Tasks</h1>
+
+      <div class="mb-6 flex flex-row gap-3">
+        <input
+          id="todo-input"
+          type="text"
+          placeholder="What needs to be done?"
+          class="flex-1 p-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none placeholder:text-white/30 focus:ring-2 focus:ring-blue-500/50 transition-all"
+        />
+
+        <button
+          id="add-button"
+          type="button"
+          class="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium transition-colors shadow-lg shadow-blue-900/20"
+        >
+          Add Task
+        </button>
+      </div>
+
+      <div class="overflow-y-auto flex-1 pr-2 custom-scrollbar">
+        <ul id="todo-list" class="space-y-3">
+          <li
+            class="flex flex-row justify-between items-center bg-white/5 border border-white/5 p-4 rounded-xl hover:bg-white/10 transition-group"
+          >
+            <span class="text-gray-300">Finish project documentation</span>
+            <div class="flex items-center gap-4">
+              <button
+                id="edit-button"
+                class="text-gray-400 hover:text-white transition-colors text-sm font-medium"
+              >
+                Edit
+              </button>
+              <button
+                id="delete-button"
+                class="text-red-400 hover:text-red-300 transition-colors text-sm font-medium"
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+
+          <li
+            class="flex flex-row justify-between items-center bg-white/2 border border-white/5 p-4 rounded-xl opacity-60 hover:bg-white/10 transition-group"
+          >
+            <span class="text-gray-500 line-through">Buy groceries</span>
+            <div class="flex items-center gap-4">
+              <button
+                class="text-gray-600 cursor-not-allowed text-sm font-medium"
+              >
+                Edit
+              </button>
+              <button
+                class="text-red-400/50 hover:text-red-400 transition-colors text-sm font-medium"
+              >
+                Delete
+              </button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
